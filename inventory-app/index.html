@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📦 Inventory Management System</h1>
+
+<div class="card">
+    <h2>Add Product</h2>
+    <input id="productName" placeholder="Product Name">
+    <input id="productQty" type="number" placeholder="Quantity">
+    <input id="productPrice" type="number" placeholder="Price">
+    <button onclick="addProduct()">Add Product</button>
+</div>
+
+<div class="card">
+    <h2>Products</h2>
+    <ul id="productList"></ul>
+</div>
+
+<div class="card">
+    <h2>Billing</h2>
+    <select id="billProduct"></select>
+    <input id="billQty" type="number" placeholder="Quantity">
+    <button onclick="calculateBill()">Generate Bill</button>
+    <p id="billResult"></p>
+</div>
+
+<div class="card">
+    <h2>Employee Salary</h2>
+    <input id="empName" placeholder="Employee Name">
+    <input id="empSalary" type="number" placeholder="Salary">
+    <button onclick="addEmployee()">Add Employee</button>
+    <ul id="empList"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
