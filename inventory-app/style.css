@@ -1,50 +1,31 @@
-#include <stdio.h>
+body {
+    font-family: Arial;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    text-align: center;
+}
 
-struct Student {
-    char name[50];
-    float marks;
-};
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    animation: slideUp 0.5s ease;
+}
 
-int main() {
-    int n, i;
-    float sum = 0.0, avg;
+button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+}
 
-    printf("Enter number of students: ");
-    scanf("%d", &n);
+button:hover {
+    transform: scale(1.1);
+}
 
-    struct Student s[n];
-
-    // Reading student details
-    for (i = 0; i < n; i++) {
-        printf("\nEnter name of student %d: ", i + 1);
-        scanf("%s", s[i].name);
-
-        printf("Enter marks of %s: ", s[i].name);
-        scanf("%f", &s[i].marks);
-
-        sum += s[i].marks;
-    }
-
-    // Compute average
-    avg = sum / n;
-
-    printf("\n\nClass Average Marks = %.2f\n", avg);
-
-    // Display students scoring above average
-    printf("\nStudents scoring ABOVE average:\n");
-    for (i = 0; i < n; i++) {
-        if (s[i].marks > avg) {
-            printf("%s  -  %.2f\n", s[i].name, s[i].marks);
-        }
-    }
-
-    // Display students scoring below average
-    printf("\nStudents scoring BELOW average:\n");
-    for (i = 0; i < n; i++) {
-        if (s[i].marks < avg) {
-            printf("%s  -  %.2f\n", s[i].name, s[i].marks);
-        }
-    }
-
-    return 0;
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
